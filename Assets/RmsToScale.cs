@@ -14,7 +14,7 @@ public class RmsToScale : MonoBehaviour
 
         var rms = Mathf.Sqrt(squareSum / sampleCount);
 
-        transform.localScale = Vector3.one * rms;
+        transform.localScale = new Vector3(1, rms, 1);
 
         squareSum = 0;
         sampleCount = 0;

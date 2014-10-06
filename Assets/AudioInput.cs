@@ -13,7 +13,7 @@ public class AudioInput : MonoBehaviour
         int minFreq, maxFreq;
         Microphone.GetDeviceCaps(null, out minFreq, out maxFreq);
 
-        audio.clip = Microphone.Start(null, true, 1, minFreq > 0 ? minFreq : 44100);
+        audio.clip = Microphone.Start(null, true, 1, maxFreq > 0 ? maxFreq : 44100);
 
         while (audio.clip != null)
         {
