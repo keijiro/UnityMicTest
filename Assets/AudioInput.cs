@@ -26,4 +26,18 @@ public class AudioInput : MonoBehaviour
             }
         }
     }
+
+    void OnApplicationPause(bool paused)
+    {
+        if (paused)
+        {
+            audio.Stop();
+            Microphone.End(null);
+            Debug.Log("paused");
+        }
+        else
+        {
+            Start();
+        }
+    }
 }
